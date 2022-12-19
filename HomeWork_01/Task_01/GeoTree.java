@@ -10,6 +10,7 @@ public class GeoTree {
     }
 
     public void append(Person parent, Person children) {
+        // Если возраст рандомнулся и меньше чем у ребенка или очень маленький промежуток то увеличиваем возраст родителя
         if(parent.getAge() < children.getAge() + 30) {
             parent.setAge(parent.getAge() + 30);
         }

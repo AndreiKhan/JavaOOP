@@ -21,6 +21,7 @@ public class Cabinet {
     // Новый тустринг
     @Override
     public String toString() {
+        // Если в шкафу лежит обувь то выводим первое
         if(sizeCloth == null) {
             return "В шкафу лежит: " + cloth + " Размер: " + sizeShoes;
         }
