@@ -2,7 +2,7 @@ package HomeWork_02.Task_GeoTree;
 
 import java.util.ArrayList;
 
-public class Reserch {
+public class Reserch implements Print {
     ArrayList<String> result = new ArrayList<>();
     ArrayList<Node> tree;
 
@@ -51,5 +51,12 @@ public class Reserch {
             }
         }
         return result;
+    }
+
+
+    // Метод печатает то для чего он может быть использован
+    @Override
+    public void print() {
+        System.out.println("С помощью исследования можно найти человека по полу, возрасту и так же найти людей с кем получаемый человек свзян");
     }
 }

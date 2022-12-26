@@ -5,8 +5,8 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.Random;
 
-// Имплементируем интерфейс Print
-public class Person implements Print{
+// Имплементируем интерфейс Print и Comparable
+public class Person implements Print, Comparable<Person>{
     private Random random = new Random();
     private String fullName;
 
@@ -74,6 +74,13 @@ public class Person implements Print{
             // Выведем в консоли сообщение если вдруг ошибка
             System.out.println("Ошибка");
         }
+    }
+
+    // Метод сравнения персон
+    // Сравнивать будем по (возраст * пол)
+    @Override
+    public int compareTo(Person o) {
+        return (this.age * this.sex.length()) - (o.getAge() * this.sex.length());
     }
 
     public String getFullName() {

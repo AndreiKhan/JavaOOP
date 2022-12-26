@@ -1,6 +1,6 @@
 package HomeWork_02.Task_Animal;
 
-public abstract class Animal {
+public abstract class Animal implements Comparable<Animal> {
     // Абстрактный класс с парметрами
     // name - Имя или вид животного
     String name;
@@ -10,6 +10,12 @@ public abstract class Animal {
     
     // Количество лап
     int paws;
+
+    // Сравнение всех животных будет по длине цвета
+    @Override
+    public int compareTo(Animal o) {
+        return this.getColor().length() - o.getColor().length();
+    }
 
     // Гетеры и сетеры
     public String getName() {

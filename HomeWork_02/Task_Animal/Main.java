@@ -1,5 +1,8 @@
 package HomeWork_02.Task_Animal;
 
+import java.util.ArrayList;
+import java.util.Collections;
+
 public class Main {
     //------------------------------2 задача--------------------------------
     /*
@@ -20,6 +23,17 @@ public class Main {
 
         // Человек
         // Person andrei = new Person("Андрей");
+
+        // Список со всеми животными
+        ArrayList<Animal> animals = new ArrayList<>();
+        animals.add(cat_1);
+        animals.add(croco);
+        animals.add(hawk);
+        System.out.println(animals + "\n");
+        
+        // Выводим отсортированный список по количеству лап
+        Collections.sort(animals, new AnimalPawsComparator());
+        System.out.println(animals + "\n");
 
         // Выведем старого котика
         System.out.println(cat_1);

@@ -1,5 +1,9 @@
 package HomeWork_02.Task_GeoTree;
 
+import java.net.SocketTimeoutException;
+import java.util.ArrayList;
+import java.util.Collections;
+
 public class Main {
     //------------------------------------------1 задача-----------------------------------------------
     /*
@@ -19,6 +23,18 @@ public class Main {
         Person misha = new Person("Миша", "Мужчина");
         Person dasha = new Person("Даша");
         GeoTree gt = new GeoTree();
+
+        // Создадим список людей и заполним его
+        ArrayList<Person> personList = new ArrayList<>();
+        personList.add(irina);
+        personList.add(vasya);
+        personList.add(masha);
+        personList.add(jane);
+        personList.add(ivan);
+        personList.add(andrei);
+        personList.add(katia);
+        personList.add(misha);
+        personList.add(dasha);
 
         gt.append(irina, vasya);
         gt.append(irina, masha);
@@ -47,5 +63,28 @@ public class Main {
         // Печатаем файл с полным древом людей и файл с одним человеком
         gt.print();
         andrei.print();
+
+        // Напечатаем метод принт
+        new Reserch(gt).print();
+
+        // Сравним людей по возрасту
+        if (andrei.compareTo(irina) > 0) {
+            System.out.println(andrei.getFullName() + " старше " + irina.getFullName());
+
+        } else if (andrei.compareTo(irina) == 0) {
+            System.out.println(andrei.getFullName() + " одного возраста " + irina.getFullName());
+
+        } else {
+            System.out.println(andrei.getFullName() + " младше " + irina.getFullName());
+        }
+
+        // Выведем список людей
+        System.out.println();
+        System.out.println(personList);
+
+        // Отсортируем список по длине пола (Боевые вертолеты в конце)
+        System.out.println();
+        Collections.sort(personList, new PersonSexComparator());
+        System.out.println(personList);
     }
 }
