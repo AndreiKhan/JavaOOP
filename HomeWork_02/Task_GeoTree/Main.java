@@ -1,6 +1,5 @@
 package HomeWork_02.Task_GeoTree;
 
-import java.net.SocketTimeoutException;
 import java.util.ArrayList;
 import java.util.Collections;
 
