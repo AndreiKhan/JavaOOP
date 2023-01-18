@@ -1,7 +1,6 @@
 package HomeWork_05;
 
 import java.io.IOException;
-import java.util.Scanner;
 import java.util.logging.FileHandler;
 import java.util.logging.Logger;
 import java.util.logging.SimpleFormatter;

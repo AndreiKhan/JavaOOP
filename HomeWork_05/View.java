@@ -26,7 +26,4 @@ public class View {
     public void messageToUser(String message) {
         System.out.println(message);
     }
-
-    public void result(String result, String expression) {
-    }
 }
