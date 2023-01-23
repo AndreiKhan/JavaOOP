@@ -4,35 +4,41 @@ import java.util.Scanner;
 
 public class Model {
 
-    View view = new View();
+    private View view = new View();
 
-    // Метод для подсчета выражения
-    public void simpleExperession(String expres) {
+    // Метод для подсчета простого выражения
+    public void simpleExperession(String expression) {
 
-        String[] term = expres.split(" ");
+        String[] term = expression.split(" ");
         Double number;
 
         // Кейс для проверки какой знак мы использовали
         switch(term[1]) {
             case "+":
                 number = Double.parseDouble(term[0]) + Double.parseDouble(term[2]);
-                view.result(number, expres);
+                view.result(expression, number);
                 break;
 
             case "-":
                 number = Double.parseDouble(term[0]) - Double.parseDouble(term[2]);
-                view.result(number, expres);
+                view.result(expression, number);
                 break;
 
             case "*":
                 number = Double.parseDouble(term[0]) * Double.parseDouble(term[2]);
-                view.result(number, expres);
+                view.result(expression, number);
                 break;
 
             case "/":
                 number = Double.parseDouble(term[0]) / Double.parseDouble(term[2]);
-                view.result(number, expres);
+                view.result(expression, number);
                 break;
+            
+            case "^":
+                number = Math.pow(Double.parseDouble(term[0]), Double.parseDouble(term[2]));
+                view.result(expression, number);
+                break;
+
             default:
                 number = 0.0;
                 view.messageToUser("Введено неправильное выражение");
@@ -52,6 +58,7 @@ public class Model {
 
         // Разбиваем полученную строку на слагаемые
         String[] term = expression.split(" ");
+
         term[2] = term[2].substring(0, term[2].length() - 1);
         term[6] = term[6].substring(0, term[6].length() - 1);
 
@@ -83,7 +90,7 @@ public class Model {
 
             case "*":
                 re = re_01 * re_02 - im_01 * im_02;
-                im = im_01 * re_02 + re_01 - im_02;
+                im = im_01 * re_02 + re_01 * im_02;
 
                 result = re.toString() + " + " + im.toString() + "i";
 
@@ -96,7 +103,7 @@ public class Model {
 
                 result = re.toString() + " + " + im.toString() + "i";
 
-                view.resultComplex(result, expression);
+                view.resultComplex(expression, result);
                 break;
 
             default:
@@ -112,5 +119,13 @@ public class Model {
         String expression = input.nextLine();
 
         return expression;
+    }
+
+    public View getView() {
+        return view;
+    }
+
+    public void setView(View view) {
+        this.view = view;
     }
 }

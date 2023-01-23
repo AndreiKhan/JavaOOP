@@ -7,8 +7,8 @@ import java.util.logging.SimpleFormatter;
 
 public class Controller {
 
-    View view = new View();
-    Model model = new Model();
+    private View view = new View();
+    private Model model = new Model();
     
     public void menu() throws IOException {
         // Лог для записи логов в LogCalc.txt
@@ -49,5 +49,21 @@ public class Controller {
         }
 
         logger.info("Калькулятор завершил работу");
+    }
+
+    public View getView() {
+        return view;
+    }
+
+    public void setView(View view) {
+        this.view = view;
+    }
+
+    public Model getModel() {
+        return model;
+    }
+
+    public void setModel(Model model) {
+        this.model = model;
     }
 }

@@ -13,12 +13,12 @@ public class View {
     }
 
     // Метод для вывода результата подсчета
-    public void result(Double result, String express) {
+    public void result(String express, Double result) {
         System.out.println(express + " = " + result);
     }
 
     // Метод для вывода результата подсчета комплексных чисел
-    public void resultComplex(String result, String express) {
+    public void resultComplex(String express, String result) {
         System.out.println(express + " = " + result);
     }
 
